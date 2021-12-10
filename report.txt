@@ -1,0 +1,46 @@
+
+
+AI Search Report
+
+-------------------------------------------------------------
+The heurisitc evaluation function - A* Algorith
+-------------------------------------------------------------
+Since this maze finding problen is computing every node to find the optimal path, the heuristic function used for the
+A* Algorithm is:
+
+f(n) = g(n) + h(n)
+
+where, g(n) represents the path cost and h(n) take the value of a straight path to the end state (i.e the last column
+in the maze)
+
+h(n) calculation is perfeomened by comparing the absolute values of the difference between the goal row and the current
+row, and adding to it the difference between the absolute value of the difference between the goal column and the
+current column.
+
+Here is a representation of the code:
+
+  dx = abs((node_dx - row_dx)) : where dx is the absolute value of the difference in rows
+  dy = abs(node_dy - col_dy) : where dy is the absolute value of the difference in columns
+
+  h_val_cost = dx + dy : where h_val_cost is h(n)
+
+
+-------------------------------------------------------------
+comparison of the performance
+-------------------------------------------------------------
+The best-first search os the best performing algorithm. It follows the path of indicated by the heuristic and solely
+focuses on getting to the next node in the maze.
+
+
+The depth-first search falls in second. It also follows the path of the hueristic and therefore has a higher chance
+of finding the solution and getting to the goal state quickly. Its hinderance is that it uses a stack
+
+breath-first search uses a queue and has to take into account all the possible nodes that it encounters, making it
+slower that the first two.
+
+A visits the next state based on heuristics, however is limited in perfromance making it the worst performing among the
+search algorithnms for this maze problem.
+
+
+
+
